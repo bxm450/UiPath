@@ -8,10 +8,10 @@ on:
 # Here the environment variable is declared in workflow level
 env:
   # Replace with your Orchestrator Values 
-  PROJECT_NAME: UiPath.TestAutomationProjectExcel                         
+  PROJECT_NAME: TestAutomationProjectExcel                         
   PROJECT_FOLDER: ${{ github.action_path }}
   ORCH_FOLDER: Shared/Sherwin Williams Cloud
-  ORCH_URL: https://cloud.uipath.com/sherwinwilliams/Dynamo/orchestrator_/?tid=5282&fid=1391401
+  ORCH_URL: https://cloud.uipath.com/sherwinwilliams/Dynamo/orchestrator_
   ORCH_TENANT: ${{ secrets.UIPATHTENANTNAME }}
   ORCH_CLIENT_ID: ${{ secrets.UIPATHCLIENTID }}
   ORCH_USER_KEY: ${{ secrets.UIPATHUSERKEY }}
@@ -66,7 +66,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: Artifacts
-      - name: Publish Nuget Package to DEV
+      - name: Publish Nuget Package to Dynamo
         shell: pwsh
         run: ${{ github.workspace }}\scripts\UiPathDeploy.ps1 ${{ github.workspace }}\package ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -UserKey ${{env.ORCH_USER_KEY}} -account_name ${{env.ORCH_ACC_NAME}}
    
@@ -79,7 +79,7 @@ jobs:
         with:
           name: Artifacts
       - name: Test the Package With Test Cases 
-        run: ${{ github.workspace }}\scripts\\UiPathRunTest.ps1  ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -UserKey ${{env.ORCH_USER_KEY}} -account_name ${{env.ORCH_ACC_NAME}} -testset "ADFDIPOC"
+        run: ${{ github.workspace }}\scripts\\UiPathRunTest.ps1  ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -UserKey ${{env.ORCH_USER_KEY}} -account_name ${{env.ORCH_ACC_NAME}} -testset "TestSet_ADFDIPOC"
   
   # Create Pull Request for Merge & Review
   create-pull-request:
