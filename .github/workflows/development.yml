@@ -11,7 +11,7 @@ env:
   PROJECT_NAME: TestAutomationProjectExcel                         
   PROJECT_FOLDER: ${{ github.action_path }}
   ORCH_FOLDER: Shared/Sherwin Williams Cloud
-  ORCH_URL: https://cloud.uipath.com/sherwinwilliams/Dynamo/orchestrator_
+  ORCH_URL: https://cloud.uipath.com/sherwinwilliams/Dynamo/orchestrator_/test/sets
   ORCH_TENANT: ${{ secrets.UIPATHTENANTNAME }}
   ORCH_CLIENT_ID: ${{ secrets.UIPATHCLIENTID }}
   ORCH_USER_KEY: ${{ secrets.UIPATHUSERKEY }}
@@ -79,7 +79,7 @@ jobs:
         with:
           name: Artifacts
       - name: Test the Package With Test Cases 
-        run: ${{ github.workspace }}\scripts\\UiPathRunTest.ps1  ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -UserKey ${{env.ORCH_USER_KEY}} -account_name ${{env.ORCH_ACC_NAME}} -testset "TestSet_ADFDIPOC"
+        run: ${{ github.workspace }}\scripts\\UiPathRunTest.ps1  ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -UserKey ${{env.ORCH_USER_KEY}} -account_name ${{env.ORCH_ACC_NAME}} -testset "ADFDI_TestSet"
   
   # Create Pull Request for Merge & Review
   create-pull-request:
