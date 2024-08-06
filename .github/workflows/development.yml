@@ -10,11 +10,13 @@ env:
   # Replace with your Orchestrator Values 
   PROJECT_NAME: TestAutomationProjectExcel                         
   PROJECT_FOLDER: ${{ github.action_path }}
-  ORCH_URL: https://cloud.uipath.com/sherwinwilliams/Dynamo/orchestrator_
+  ORCH_FOLDER: "\\Shared\Sherwin Williams Cloud"
+  ORCH_URL: https://cloud.uipath.com/sherwinwilliams/Dynamo/
   ORCH_TENANT: ${{ secrets.UIPATHTENANTNAME }}
   ORCH_CLIENT_ID: ${{ secrets.UIPATHCLIENTID }}
   ORCH_USER_KEY: ${{ secrets.UIPATHUSERKEY }}
   ORCH_ACC_NAME: ${{ secrets.UIPATHACCOUNTNAME }}
+  CLI_URL: https://uipath.visualstudio.com/Public.Feeds/_artifacts/feed/UiPath-Official/NuGet/UiPath.CLI.Windows/overview/23.10.8894.39673
 
 jobs:
   print-details:
@@ -78,7 +80,7 @@ jobs:
         with:
           name: Artifacts
       - name: Test the Package With Test Cases 
-        run: ${{ github.workspace }}\scripts\\UiPathRunTest.ps1  ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -UserKey ${{env.ORCH_USER_KEY}} -account_name ${{env.ORCH_ACC_NAME}}
+        run: ${{ github.workspace }}\scripts\\UiPathRunTest.ps1  ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -UserKey ${{env.ORCH_USER_KEY}} -account_name ${{env.ORCH_ACC_NAME}} -testset "TestSet_GitHub"
   
   # Create Pull Request for Merge & Review
   create-pull-request:
@@ -92,7 +94,7 @@ jobs:
         with:
           destination_branch: "main"
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          pr_label: "feature, automated pr"
+          pr_label: "Feature, automated pr"
           pr_title: "Pull Request From Github Action"
   
   # "notify" workflow for slack notification
