@@ -84,7 +84,7 @@ jobs:
          
   # Create Pull Request for Merge & Review
   create-pull-request:
-    needs: test-uipath-published-package
+    needs: publish-uipath-nuget-package
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
