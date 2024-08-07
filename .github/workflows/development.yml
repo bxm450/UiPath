@@ -69,7 +69,7 @@ jobs:
           name: Artifacts
       - name: Publish Nuget Package to Dynamo
         shell: pwsh
-        run: ${{ github.workspace }}\scripts\UiPathDeploy.ps1 ${{ github.workspace }}\package ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -UserKey ${{env.ORCH_USER_KEY}} -account_name ${{env.ORCH_ACC_NAME}} -folder_organization_unit Shared\Sherwin Williams Cloud
+        run: ${{ github.workspace }}\scripts\UiPathDeploy.ps1 ${{ github.workspace }}\package ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -UserKey ${{env.ORCH_USER_KEY}} -account_name ${{env.ORCH_ACC_NAME}} -folder_organization_unit Dynamo
         
   test-uipath-published-package:
     needs: publish-uipath-nuget-package
@@ -80,7 +80,7 @@ jobs:
         with:
           name: Artifacts
       - name: Test the Package With Test Cases 
-        run: ${{ github.workspace }}\scripts\\UiPathRunTest.ps1  ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -UserKey ${{env.ORCH_USER_KEY}} -account_name ${{env.ORCH_ACC_NAME}} -testset "Shared\Sherwin Williams Cloud\CICDTestSet" -folder_organization_unit Shared\Sherwin Williams Cloud
+        run: ${{ github.workspace }}\scripts\\UiPathRunTest.ps1  ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -UserKey ${{env.ORCH_USER_KEY}} -account_name ${{env.ORCH_ACC_NAME}} -testset "CICDTestSet" -folder_organization_unit Dynamo
      
   
   # Create Pull Request for Merge & Review
