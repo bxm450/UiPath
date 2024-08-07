@@ -10,7 +10,7 @@ env:
   # Replace with your Orchestrator Values 
   PROJECT_NAME: TestAutomationProjectExcel                         
   PROJECT_FOLDER: ${{ github.action_path }}
-  ORCH_FOLDER: "\\Shared\Sherwin Williams Cloud"
+  ORCH_FOLDER: /Shared/Sherwin Williams Cloud
   ORCH_URL: https://cloud.uipath.com/sherwinwilliams/Dynamo/
   ORCH_TENANT: ${{ secrets.UIPATHTENANTNAME }}
   ORCH_CLIENT_ID: ${{ secrets.UIPATHCLIENTID }}
