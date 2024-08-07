@@ -59,19 +59,8 @@ jobs:
            package/*.*
            scripts/*.ps1
   
-  test-uipath-published-package:
-    needs: build-uipath-nuget-package
-    runs-on: windows-latest  
-    steps: 
-      - name: Download UiPath Artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: Artifacts
-      - name: Test the Package With Test Cases 
-        run: ${{ github.workspace }}\scripts\\UiPathRunTest.ps1  ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -UserKey ${{env.ORCH_USER_KEY}} -account_name ${{env.ORCH_ACC_NAME}} -testset "CICDTestSet" -folder_organization_unit Dynamo
-  
   publish-uipath-nuget-package:
-    needs: test-uipath-published-package
+    needs: build-uipath-nuget-package
     runs-on: windows-latest
     steps: 
       - name: Download UiPath Artifacts
@@ -81,10 +70,21 @@ jobs:
       - name: Publish Nuget Package to Dynamo
         shell: pwsh
         run: ${{ github.workspace }}\scripts\UiPathDeploy.ps1 ${{ github.workspace }}\package ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -UserKey ${{env.ORCH_USER_KEY}} -account_name ${{env.ORCH_ACC_NAME}} -folder_organization_unit Dynamo
-         
+  
+  test-uipath-published-package:
+    needs: publish-uipath-nuget-package
+    runs-on: windows-latest  
+    steps: 
+      - name: Download UiPath Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: Artifacts
+      - name: Test the Package With Test Cases 
+        run: ${{ github.workspace }}\scripts\\UiPathRunTest.ps1  ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -UserKey ${{env.ORCH_USER_KEY}} -account_name ${{env.ORCH_ACC_NAME}} -testset "CICDTestSet" -folder_organization_unit Dynamo
+  
   # Create Pull Request for Merge & Review
   create-pull-request:
-    needs: publish-uipath-nuget-package
+    needs: test-uipath-published-package
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
