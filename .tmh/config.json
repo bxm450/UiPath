@@ -1,0 +1,9 @@
+{
+  "issueKeyTestcaseValues": {},
+  "testManagerBasePath": "https://cloud.uipath.com/sherwinwilliams/dynamo/testmanager_",
+  "defaultProject": {
+    "id": "6976cebf-c411-0000-b9b1-0b471272cf68",
+    "name": "SWAuto",
+    "key": "SWAUTO"
+  }
+}
