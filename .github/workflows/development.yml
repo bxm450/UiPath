@@ -80,7 +80,7 @@ jobs:
         with:
           name: Artifacts
       - name: Test the Package With Test Cases 
-        run: ${{ github.workspace }}\scripts\\UiPathRunTest.ps1  ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -UserKey ${{env.ORCH_USER_KEY}} -account_name ${{env.ORCH_ACC_NAME}} -testset "CICDTestSet" -folder_organization_unit "Automations/POC/ADFDI POC"
+        run: ${{ github.workspace }}\scripts\\UiPathRunTest.ps1  ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -UserKey ${{env.ORCH_USER_KEY}} -account_name ${{env.ORCH_ACC_NAME}} -testset "CICD Test Set" -folder_organization_unit "Automations/POC/ADFDI POC"
   
   # Create Pull Request for Merge & Review
   create-pull-request:
