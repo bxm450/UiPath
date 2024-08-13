@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="InitiateADFDApplication" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1056,634" sap2010:WorkflowViewState.IdRef="InitiateADFDApplication_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="InitiateADFDApplication" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="848.8,596.8" sap2010:WorkflowViewState.IdRef="InitiateADFDApplication_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -72,7 +72,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="InitiateADFDApplication" sap:VirtualizedContainerService.HintSize="416,396" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="InitiateADFDApplication" sap:VirtualizedContainerService.HintSize="416,396.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="latestApplicationFile" />
     </Sequence.Variables>
@@ -81,13 +81,11 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="string downloadsFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + &quot;\\Downloads\\POCADFDI&quot;;&#xD;&#xA;string[] txtFiles = Directory.GetFiles(downloadsFolderPath, &quot;*.xlsx&quot;);&#xD;&#xA;&#xD;&#xA;if (txtFiles.Length &gt; 0)&#xD;&#xA;{&#xD;&#xA;    var latestTxtFile = txtFiles&#xD;&#xA;        .Select(file =&gt; new FileInfo(file))&#xD;&#xA;        .OrderByDescending(fileInfo =&gt; fileInfo.LastWriteTime)&#xD;&#xA;        .First();&#xD;&#xA;&#xD;&#xA;     latestTxtFilePath = latestTxtFile.FullName;&#xD;&#xA;Console.WriteLine(latestTxtFilePath);&#xD;&#xA;    // Use 'latestTxtFilePath' in UiPath for further processing.&#xD;&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="354,197" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="string downloadsFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + &quot;\\Downloads&quot;;&#xD;&#xA;string[] txtFiles = Directory.GetFiles(downloadsFolderPath, &quot;*.xlsx&quot;);&#xD;&#xA;&#xD;&#xA;if (txtFiles.Length &gt; 0)&#xD;&#xA;{&#xD;&#xA;    var latestTxtFile = txtFiles&#xD;&#xA;        .Select(file =&gt; new FileInfo(file))&#xD;&#xA;        .OrderByDescending(fileInfo =&gt; fileInfo.LastWriteTime)&#xD;&#xA;        .First();&#xD;&#xA;&#xD;&#xA;     latestTxtFilePath = latestTxtFile.FullName;&#xD;&#xA;Console.WriteLine(latestTxtFilePath);&#xD;&#xA;    // Use 'latestTxtFilePath' in UiPath for further processing.&#xD;&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="353.6,196.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
       <ui:InvokeCode.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="latestTxtFilePath">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="latestApplicationFile" />
-        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="latestTxtFilePath">[latestApplicationFile]</OutArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
-    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[latestApplicationFile]" sap:VirtualizedContainerService.HintSize="354,111" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[latestApplicationFile]" sap:VirtualizedContainerService.HintSize="353.6,111.2" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
   </Sequence>
 </Activity>

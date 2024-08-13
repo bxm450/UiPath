@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="H0Svym_xEkWf19V-xivZ9g" Reference="eVYNqArr5Uq6LkYRDOhOeQ/zNFPeSfQB0-nWYn8nvFm3A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="c47ca819-b0c0-463b-8408-06abfc6044fa" CvElementArea="31, 216, 19, 19" CvTextArea="50, 217, 382, 17" CvTextArgument="Repair/Change Oracle ADF Desktop Integration Add-In for Excel" CvType="RadioButton" DesignTimeRectangle="33, 212, 580, 28" DesignTimeScaleFactor="1.25" ElementType="RadioButton" FullSelectorArgument="&lt;wnd cls='Button' title='MsiRadioButtonGroup' /&gt;&lt;wnd aaname='Repair/Change Oracle ADF Desktop Integration Add-In for Excel' cls='Button' title='&amp;amp;Repair/Change Oracle ADF Desktop Integration Add-In for Excel' /&gt;" FuzzySelectorArgument="&lt;wnd cls='Button' title='MsiRadioButtonGroup' /&gt;&lt;wnd aaname='Repair/Change Oracle ADF Desktop Integration Add-In for Excel' cls='Button' title='&amp;amp;Repair/Change Oracle ADF Desktop Integration Add-In for Excel' check:fulltext='Repair/Change Oracle ADF Desktop Integration Add-In for Excel' /&gt;" Guid="ffb42ca4-fd37-4664-b401-2e259b68a286" ScopeSelectorArgument="&lt;wnd app='msiexec.exe' cls='MsiDialogCloseClass' title='Oracle ADF Desktop Integration Add-In for Excel' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="c47ca819-b0c0-463b-8408-06abfc6044fa" CvElementArea="30, 245, 20, 21" CvTextArea="50, 247, 342, 15" CvTextArgument="Remove Oracle ADF Desktop Integration Add-In for Excel" CvType="RadioButton" DesignTimeRectangle="33, 242, 580, 28" ElementType="RadioButton" FullSelectorArgument="&lt;wnd cls='Button' title='MsiRadioButtonGroup' /&gt;&lt;wnd aaname='Remove Oracle ADF Desktop Integration Add-In for Excel' cls='Button' title='Re&amp;amp;move Oracle ADF Desktop Integration Add-In for Excel' /&gt;" FuzzySelectorArgument="&lt;wnd cls='Button' title='MsiRadioButtonGroup' /&gt;&lt;wnd aaname='Remove Oracle ADF Desktop Integration Add-In for Excel' cls='Button' title='Re&amp;amp;move Oracle ADF Desktop Integration Add-In for Excel' check:fulltext='Remove Oracle ADF Desktop Integration Add-In for Excel' /&gt;" Guid="045fdd3f-2c51-47d7-8727-4aa32faec1c9" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="17325b566da0a48194f07867790ae1ee.png" xmlns="">0IPKLtLkr7keydZu_P6WdSw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

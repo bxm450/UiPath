@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="WorkflowPOC" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="852,2393" sap2010:WorkflowViewState.IdRef="WorkflowPOC_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="WorkflowPOC" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1233,3125" sap2010:WorkflowViewState.IdRef="WorkflowPOC_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -101,242 +101,308 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="WorkflowPOC" sap:VirtualizedContainerService.HintSize="512,2328" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="WorkflowPOC" sap:VirtualizedContainerService.HintSize="512,3060" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="processID" />
+      <Variable x:TypeArguments="x:String" Name="assetNumber">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">73655</Literal>
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: CreateMassFinancialTransaction.xlsx - Excel" sap:VirtualizedContainerService.HintSize="450,2240" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="dfc42471-d230-4c49-9e46-e4f8b52cd8b9" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="CreateMassFinancialTransaction.xlsx - Excel" sap:VirtualizedContainerService.HintSize="450,2972" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="dfc42471-d230-4c49-9e46-e4f8b52cd8b9" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1926" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,2658" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Double Click" sap:VirtualizedContainerService.HintSize="354,139" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
-              <ui:Click.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:Click.CursorPosition>
-              <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2b174e1d-1ab0-4bc1-8b20-5b20298df2f6" InformativeScreenshot="89f0570224662a00bc0b609dfba72d04" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction*.xlsx - Excel' /&gt;&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='G10' cls='XLSpreadsheetCell' name='G10' tableCol='6' tableRow='9' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:Click.Target>
-            </ui:Click>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'item  G10'" sap:VirtualizedContainerService.HintSize="354,187" sap2010:WorkflowViewState.IdRef="TypeInto_3">
-              <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fb132280-1970-48f2-a081-0a5757f75fdc" InformativeScreenshot="049eb14f73ca49acb11b1b8038cbd672" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction*.xlsx - Excel' /&gt;&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='G10' cls='XLSpreadsheetCell' name='G10' tableCol='6' tableRow='9' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:TypeInto.Target>
-              <ui:TypeInto.Text>
-                <InArgument x:TypeArguments="x:String">
-                  <Literal x:TypeArguments="x:String" Value="" />
-                </InArgument>
-              </ui:TypeInto.Text>
-            </ui:TypeInto>
-            <Delay Duration="00:00:07" sap:VirtualizedContainerService.HintSize="354,122" sap2010:WorkflowViewState.IdRef="Delay_1" />
-            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'grouping'" sap:VirtualizedContainerService.HintSize="354,187" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="73655[k(Enter)]">
-              <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5667072f-6c8f-43a4-9633-b5ecbdd7f596" InformativeScreenshot="69d66993578da7d9d294b03895095aac" Selector="&lt;wnd app='excel.exe' ctrlname='WebView2Form' /&gt;&lt;wnd ctrlname='m_webView2' /&gt;&lt;wnd aaname='Search and Select: Assets - Web content' cls='Chrome_WidgetWin_1' title='Search and Select: Assets' /&gt;&lt;ctrl name='Search and Select: Assets' role='document' /&gt;&lt;ctrl role='grouping' idx='32' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:TypeInto.Target>
-            </ui:TypeInto>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'cell  73655'" sap:VirtualizedContainerService.HintSize="354,139" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
-              <ui:Click.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:Click.CursorPosition>
-              <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ee4f3f91-3ca8-41ae-a4f1-c934f893a7f7" InformativeScreenshot="8d5eb0a3629f4089421d79f70b56b5ac" Selector="&lt;wnd app='excel.exe' ctrlname='WebView2Form' /&gt;&lt;wnd ctrlname='m_webView2' /&gt;&lt;wnd aaname='Search and Select: Assets - Web content' cls='Chrome_WidgetWin_*' title='Search and Select: Assets' /&gt;&lt;ctrl name='Search and Select: Assets' role='document' /&gt;&lt;ctrl name='This table contains column headers corresponding to the data bod*' role='grouping' /&gt;&lt;ctrl name='Search Results' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='73655' role='cell' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:Click.Target>
-            </ui:Click>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  OK'" sap:VirtualizedContainerService.HintSize="354,139" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
-              <ui:Click.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:Click.CursorPosition>
-              <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0c369db7-2f7f-4c7e-b40f-75c0eeaa3ee2" InformativeScreenshot="769c1badfe3bdc8e9adbe9081043fcc8" Selector="&lt;wnd app='excel.exe' ctrlname='WebView2Form' /&gt;&lt;wnd ctrlname='m_webView2' /&gt;&lt;wnd aaname='Search and Select: Assets - Web content' cls='Chrome_WidgetWin_*' title='Search and Select: Assets' /&gt;&lt;ctrl name='Search and Select: Assets' role='document' /&gt;&lt;ctrl name='OK' role='push button' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:Click.Target>
-            </ui:Click>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayMS="2000" DisplayName="Type Into 'item  J10'" sap:VirtualizedContainerService.HintSize="354,187" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="Post">
-              <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7ffb2893-a137-4769-9d56-804dbeda3d3c" InformativeScreenshot="9b38416ec1e3ec7ea43826f9810ecc61" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction*.xlsx - Excel' /&gt;&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='J10' cls='XLSpreadsheetCell' name='J10' tableCol='8' tableRow='9' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:TypeInto.Target>
-            </ui:TypeInto>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'item  O10'" sap:VirtualizedContainerService.HintSize="354,139" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
-              <ui:Click.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:Click.CursorPosition>
-              <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3c53ad67-5efe-4183-af4a-3052fc1483b8" InformativeScreenshot="3d7b55ed6cd2fa785b0548faae0d439d" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction*.xlsx - Excel' /&gt;&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='O10' cls='XLSpreadsheetCell' name='O10' tableCol='13' tableRow='9' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:Click.Target>
-            </ui:Click>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'item  O10'" sap:VirtualizedContainerService.HintSize="354,187" sap2010:WorkflowViewState.IdRef="TypeInto_5" Text="16000">
-              <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="87a7b7ce-2bc8-4a5b-8833-078eb5b0a9c7" InformativeScreenshot="f91a2397be842d2ce3c83a822ead33b0" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction*.xlsx - Excel' /&gt;&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='O10' cls='XLSpreadsheetCell' name='O10' tableCol='13' tableRow='9' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:TypeInto.Target>
-            </ui:TypeInto>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'item  F6'" sap:VirtualizedContainerService.HintSize="354,139" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
-              <ui:Click.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:Click.CursorPosition>
-              <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a489fc39-22f8-4ae5-8559-b360387a25d8" InformativeScreenshot="46ab0ccba4c4b1a25fb632cd5ae6eb15" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction*.xlsx - Excel' /&gt;&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='J19' cls='XLSpreadsheetCell' name='J19' tableCol='6' tableRow='18' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:Click.Target>
-            </ui:Click>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="5000" DisplayName="Click 'Button  Post'" sap:VirtualizedContainerService.HintSize="354,139" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
-              <ui:Click.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:Click.CursorPosition>
-              <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ccf4e0e7-0473-4b28-ae7c-f16eb4fba74d" InformativeScreenshot="660901a47374670656866dd73863c134" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction*.xlsx - Excel' /&gt;&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia cls='NetUIOrderedGroup' name='Manage Financial Transactions' /&gt;&lt;uia cls='NetUIChunk' name='Worksheet' /&gt;&lt;uia cls='NetUIRibbonButton' name='Post' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:Click.Target>
-            </ui:Click>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'WindowsForms10.BUTTON.a...'" sap:VirtualizedContainerService.HintSize="354,132" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
-              <ui:Click.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:Click.CursorPosition>
-              <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0918f635-183b-43e2-a72e-4efb25a3751d" InformativeScreenshot="aab7e2897884566b29c1d9a453d477ee" Selector="&lt;wnd app='excel.exe' ctrlname='UploadOptionsDialog' /&gt;&lt;wnd ctrlname='m_btnOK' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:Click.Target>
-            </ui:Click>
+            <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="" ClickType="Double" DelayAfter="3" DisplayName="Click on Asset Number field" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dfc42471-d230-4c49-9e46-e4f8b52cd8b9" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="_80wv0GchE2rLqhmKUnqmA" DesignTimeRectangle="551, 379, 249, 24" DesignTimeScaleFactor="1" ElementType="Cell" FullSelectorArgument="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='G10' cls='XLSpreadsheetCell' name='G10' tableCol='6' tableRow='9' /&gt;" FuzzySelectorArgument="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='G10' cls='XLSpreadsheetCell' name='G10' role='item' /&gt;" Guid="06523686-29eb-4e11-b2e9-b131b53a55ec" InformativeScreenshot="98dc4296c17cee88e8f8ce34d53e7593.png" Reference="eVYNqArr5Uq6LkYRDOhOeQ/6E67gVGvN06-nlaOnRxTWg" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction* - Excel' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Asset Number'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="354,250" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="dfc42471-d230-4c49-9e46-e4f8b52cd8b9" Text="[assetNumber + &quot;[k(Enter)]&quot;]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable CVScreenId="cbaa09b3-7a24-44ba-8872-5152797e5d0f" CvElementArea="134, 105, 219, 30" CvType="InputBox" DesignTimeRectangle="134, 105, 219, 30" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="05927cda-e100-4dec-91ac-9cc6c93cc491" ImageBase64="" InformativeScreenshot="aae39755666cbc415e6a8e276102de29.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='excel.exe' ctrlname='WebView2Form' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="cbaa09b3-7a24-44ba-8872-5152797e5d0f" CvTextArea="46, 113, 85, 12" CvTextArgument="Asset Number" CvType="Text" DesignTimeRectangle="46, 113, 85, 12" ElementType="Text" Guid="8a9659ec-5ffe-4438-874e-0e18e1103169" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="2" DisplayName="Click 'grouping'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dfc42471-d230-4c49-9e46-e4f8b52cd8b9" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CVScreenId="aee26efa-900b-4e33-a7f7-dd11259785ca" CvTextArea="27, 270, 36, 13" CvTextArgument="73655" CvType="Text" DesignTimeRectangle="24, 263, 111, 31" DesignTimeScaleFactor="1" ElementType="Cell" FullSelectorArgument="[string.Format(&quot;&lt;wnd ctrlname='m_webView2' /&gt;&lt;wnd aaname='Search and Select: Assets - Web content' cls='*' title='Search and Select: Assets' /&gt;&lt;ctrl name='Search and Select: Assets' role='document' /&gt;&lt;ctrl name='This table contains column headers corresponding to the data bod*' role='grouping' /&gt;&lt;ctrl name='Search Results' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='{0}' role='cell' /&gt;&quot;, assetNumber)]" FuzzySelectorArgument="[string.Format(&quot;&lt;wnd ctrlname='m_webView2' /&gt;&lt;wnd aaname='Search and Select: Assets - Web content' cls='*' title='Search and Select: Assets' /&gt;&lt;ctrl name='Search and Select: Assets' role='document' /&gt;&lt;ctrl name='This table contains column headers corresponding to the data bod*' role='grouping' /&gt;&lt;ctrl name='Search Results' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='{0}' role='cell' automationid='' /&gt;&quot;, assetNumber)]" Guid="7f6f5a74-6b26-4dcf-9732-657a09154036" ImageBase64="" InformativeScreenshot="c909f7995aec6c5354f0e370774751a3.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' ctrlname='WebView2Form' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="aee26efa-900b-4e33-a7f7-dd11259785ca" CvTextArea="67, 239, 51, 13" CvTextArgument="Number" CvType="Text" DesignTimeRectangle="97, 239, 32, 16" FullSelectorArgument="&lt;wnd ctrlname='m_webView2' /&gt;&lt;wnd aaname='Search and Select: Assets - Web content' cls='Chrome_WidgetWin_1' title='Search and Select: Assets' /&gt;&lt;ctrl name='Search and Select: Assets' role='document' /&gt;&lt;ctrl name='This table contains column headers corresponding to the data bod*' role='grouping' /&gt;&lt;ctrl idx='2' name='This table contains column headers corresponding to the data bod*' role='table' /&gt;&lt;ctrl idx='2' role='row' /&gt;&lt;ctrl name='Asset Number' role='column header' /&gt;&lt;ctrl role='grouping' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='m_webView2' /&gt;&lt;wnd aaname='Search and Select: Assets - Web content' cls='Chrome_WidgetWin_1' title='Search and Select: Assets' /&gt;&lt;ctrl name='Search and Select: Assets' role='document' /&gt;&lt;ctrl name='This table contains column headers corresponding to the data bod*' role='grouping' /&gt;&lt;ctrl name='This table contains column headers corresponding to the data bod*' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='Asset Number' role='column header' /&gt;&lt;ctrl role='grouping' automationid='' /&gt;" Guid="38a81378-13f0-471e-987e-b4d8e76e6e36" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dfc42471-d230-4c49-9e46-e4f8b52cd8b9" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CVScreenId="2e14ddf2-9657-4625-93c8-f68d9db0612e" CvElementArea="291, 309, 36, 29" CvTextArea="298, 315, 21, 14" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="290, 309, 36, 28" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='m_webView2' /&gt;&lt;wnd aaname='Search and Select: Assets - Web content' cls='Chrome_WidgetWin_1' title='Search and Select: Assets' /&gt;&lt;ctrl name='Search and Select: Assets' role='document' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='m_webView2' /&gt;&lt;wnd aaname='Search and Select: Assets - Web content' cls='Chrome_WidgetWin_1' title='Search and Select: Assets' /&gt;&lt;ctrl name='Search and Select: Assets' role='document' /&gt;&lt;ctrl name='OK' role='push button' automationid='' check:text='OK' /&gt;" Guid="2eb6a307-2a39-48f0-9a2b-e7a5413abefd" InformativeScreenshot="f9d93642172672fc7b98bb8519a5b885.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' ctrlname='WebView2Form' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="2e14ddf2-9657-4625-93c8-f68d9db0612e" CvElementArea="291, 309, 36, 29" CvTextArea="298, 315, 21, 14" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="299, 315, 10, 15" ElementType="Text" FullSelectorArgument="&lt;wnd ctrlname='m_webView2' /&gt;&lt;wnd aaname='Search and Select: Assets - Web content' cls='Chrome_WidgetWin_1' title='Search and Select: Assets' /&gt;&lt;ctrl name='Search and Select: Assets' role='document' /&gt;&lt;ctrl name='OK' role='push button' /&gt;&lt;ctrl name='O' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='m_webView2' /&gt;&lt;wnd aaname='Search and Select: Assets - Web content' cls='Chrome_WidgetWin_1' title='Search and Select: Assets' /&gt;&lt;ctrl name='Search and Select: Assets' role='document' /&gt;&lt;ctrl name='OK' role='push button' /&gt;&lt;ctrl name='O' role='text' automationid='' check:text='O' /&gt;" Guid="b2a6f7b0-403c-4c82-9480-f82fd83b6628" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="354,84" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,304" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'J10'" sap:VirtualizedContainerService.HintSize="354,216" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dfc42471-d230-4c49-9e46-e4f8b52cd8b9" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="936, 379, 143, 24" DesignTimeScaleFactor="1" ElementType="Cell" FullSelectorArgument="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='J10' cls='XLSpreadsheetCell' name='J10' tableCol='8' tableRow='9' /&gt;" FuzzySelectorArgument="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='J10' cls='XLSpreadsheetCell' name='J10' role='item' /&gt;" Guid="5ca9130f-2ede-4db5-888e-a4dad08fe9ad" InformativeScreenshot="a5c6862f0e1c318cd2e9be041c53e8bf.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction (6) - Excel' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="2" DisplayName="Provide Posting Status" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="354,250" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="dfc42471-d230-4c49-9e46-e4f8b52cd8b9" Text="Post" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="936, 379, 143, 24" DesignTimeScaleFactor="1" ElementType="Cell" FullSelectorArgument="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='J10' cls='XLSpreadsheetCell' name='J10' tableCol='8' tableRow='9' /&gt;" FuzzySelectorArgument="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='J10' cls='XLSpreadsheetCell' name='J10' role='item' /&gt;" Guid="10f412d6-d091-43cc-85b4-334b25b5ff4e" InformativeScreenshot="12a3ca14c2b5527ba82649861d0d5498.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'O10'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dfc42471-d230-4c49-9e46-e4f8b52cd8b9" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="1762, 379, 189, 24" DesignTimeScaleFactor="1" ElementType="Cell" FullSelectorArgument="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='O10' cls='XLSpreadsheetCell' name='O10' tableCol='13' tableRow='9' /&gt;" FuzzySelectorArgument="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='O10' cls='XLSpreadsheetCell' name='O10' role='item' /&gt;" Guid="22d31e55-3ec2-4681-93c3-5574c00c8221" InformativeScreenshot="47b60d68a567c7515a9084660dc29a95.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'O10'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="354,250" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="dfc42471-d230-4c49-9e46-e4f8b52cd8b9" Text="16000" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="1762, 379, 189, 24" DesignTimeScaleFactor="1" ElementType="Cell" FullSelectorArgument="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='O10' cls='XLSpreadsheetCell' name='O10' tableCol='13' tableRow='9' colName='O' /&gt;" FuzzySelectorArgument="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='O10' cls='XLSpreadsheetCell' name='O10' role='item' colName='O' /&gt;" Guid="d2ce00bb-c5b4-406a-ab95-efd333202770" InformativeScreenshot="8217e13902462e9665db5be68c3f61fe.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'G4'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dfc42471-d230-4c49-9e46-e4f8b52cd8b9" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="551, 281, 249, 24" DesignTimeScaleFactor="1" ElementType="Cell" FullSelectorArgument="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='G4' cls='XLSpreadsheetCell' name='G4' tableCol='6' tableRow='4' /&gt;" FuzzySelectorArgument="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='G4' cls='XLSpreadsheetCell' name='G4' role='item' /&gt;" Guid="9fa2f66b-1672-49fe-b2b2-bcb89d9663df" InformativeScreenshot="ad3bac3a4b46c6bb11aed2146f3e2152.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction* - Excel' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="2" DisplayName="Click 'Post'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dfc42471-d230-4c49-9e46-e4f8b52cd8b9" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CVScreenId="55e79259-f278-4b8d-a5d5-4d620427376d" CvTextArea="303, 114, 25, 12" CvTextArgument="Post" CvType="Text" DesignTimeRectangle="295, 75, 42, 73" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia cls='NetUIOrderedGroup' name='Manage Financial Transactions' /&gt;&lt;uia cls='NetUIChunk' name='Worksheet' /&gt;&lt;uia cls='NetUIRibbonButton' name='Post' /&gt;" FuzzySelectorArgument="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia cls='NetUIOrderedGroup' name='Manage Financial Transactions' /&gt;&lt;uia cls='NetUIChunk' name='Worksheet' /&gt;&lt;uia cls='NetUIRibbonButton' name='Post' role='Button' automationid='' check:fulltext='Post' /&gt;" Guid="d878e84b-e530-4733-b2e7-3c52842a481e" InformativeScreenshot="9545fbdff300b6fbe84ccd0e3c722f21.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction* - Excel' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dfc42471-d230-4c49-9e46-e4f8b52cd8b9" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CVScreenId="e2f252ad-c9db-4a02-a335-6c3dfc988e75" CvElementArea="134, 88, 75, 23" CvTextArea="161, 93, 18, 12" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="134, 88, 75, 23" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='m_btnOK' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='m_btnOK' check:text='OK' /&gt;" Guid="de749194-d7ee-422f-8235-6b5f4a93a887" InformativeScreenshot="7b572ec804630b9600cdea2edb3b2be9.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' ctrlname='UploadOptionsDialog' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="354,84" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="5000" DisplayName="Click 'Button  Post'" sap:VirtualizedContainerService.HintSize="354,130" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ccf4e0e7-0473-4b28-ae7c-f16eb4fba74d" InformativeScreenshot="660901a47374670656866dd73863c134" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction*.xlsx - Excel' /&gt;&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia cls='NetUIOrderedGroup' name='Manage Financial Transactions' /&gt;&lt;uia cls='NetUIChunk' name='Worksheet' /&gt;&lt;uia cls='NetUIRibbonButton' name='Post' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="354,77" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'WindowsForms10.BUTTON.a...'" sap:VirtualizedContainerService.HintSize="354,130" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0918f635-183b-43e2-a72e-4efb25a3751d" InformativeScreenshot="aab7e2897884566b29c1d9a453d477ee" Selector="&lt;wnd app='excel.exe' ctrlname='UploadOptionsDialog' /&gt;&lt;wnd ctrlname='m_btnOK' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-8, -8, 1936, 1056" Arguments="c:\users\bhmohapatra\downloads\noam_automation-develop (1)\noam_automation-develop\downloads\createmassfinancialtransaction.xlsx" FilePath="C:\Program Files\Microsoft Office\root\Office16\excel.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGvSURBVFhH7Zc9SEJRGIZdo9B+pRoShwhChIoQhCBbgsgpGgJpKyKIaAmClqDBoSmyLQikrbaCppaksdvUGDQ1FjQ0fvlezpGjfefcn86FkF548Hr4vvO+nh/U2L+8lK6uO3XIL1O1gyA4wkYvzsQEY2JE2OjFmZjgTEwIG704ExOciQlhoxdnYoIzMSFs9Bo5LpEXqcpq+ADd+wWnDoWhZ3eWBjYKbojfBGAn90vH/CjFt/ON9zKIX/5WgNRhke5fnlz2bk4a4zOVtcY4ntUe6ytw+nBJ0MfXpxsIYzCG8Npabz0ATGEOle/OafFsx32GskcrTbUgkjOweVV2DRFEfnqE4WojO4TSGHp9f2NrQGQBrp9rwp7fe0l8OkXJpQkaLOVcuBoTbAC579gCeR6wLVyt9QA4hFhyCPsOIPVWqFgPwF1DGeji8bapFlgNoF45dcnlrYBQo/ZEcgaC0BYBQn8dJ7byPwIERfzs0KtzfIh0dGWGKZFLRxugd26MvEguT7KT+0HY6NW3kCET/cUsO7FfhI1eXJNNhI1eXJNNhI1e9SKntcki3n/N2lyx2De7iUsgzKBEqQAAAABJRU5ErkJggg==" InformativeScreenshot="861664a152139ee8b1744eeaeebe9b30.png" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction.xlsx - Excel' /&gt;" Title="CreateMassFinancialTransaction.xlsx - Excel" />
+        <uix:TargetApp Area="-8, -8, 1936, 1056" ContentHash="SQXhEtVbmUiKpnjmJAJ3rw" FilePath="C:\Program Files\Microsoft Office\root\Office16\excel.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGvSURBVFhH7Zc9SEJRGIZdo9B+pRoShwhChIoQhCBbgsgpGgJpKyKIaAmClqDBoSmyLQikrbaCppaksdvUGDQ1FjQ0fvlezpGjfefcn86FkF548Hr4vvO+nh/U2L+8lK6uO3XIL1O1gyA4wkYvzsQEY2JE2OjFmZjgTEwIG704ExOciQlhoxdnYoIzMSFs9Bo5LpEXqcpq+ADd+wWnDoWhZ3eWBjYKbojfBGAn90vH/CjFt/ON9zKIX/5WgNRhke5fnlz2bk4a4zOVtcY4ntUe6ytw+nBJ0MfXpxsIYzCG8Npabz0ATGEOle/OafFsx32GskcrTbUgkjOweVV2DRFEfnqE4WojO4TSGHp9f2NrQGQBrp9rwp7fe0l8OkXJpQkaLOVcuBoTbAC579gCeR6wLVyt9QA4hFhyCPsOIPVWqFgPwF1DGeji8bapFlgNoF45dcnlrYBQo/ZEcgaC0BYBQn8dJ7byPwIERfzs0KtzfIh0dGWGKZFLRxugd26MvEguT7KT+0HY6NW3kCET/cUsO7FfhI1eXJNNhI1eXJNNhI1e9SKntcki3n/N2lyx2De7iUsgzKBEqQAAAABJRU5ErkJggg==" InformativeScreenshot="861664a152139ee8b1744eeaeebe9b30.png" Reference="eVYNqArr5Uq6LkYRDOhOeQ/2DW6-03a9EOfd0rSbF19rA" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction*' /&gt;" Title="CreateMassFinancialTransaction.xlsx - Excel" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
   </Sequence>

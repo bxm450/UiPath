@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="_80wv0GchE2rLqhmKUnqmA" Reference="eVYNqArr5Uq6LkYRDOhOeQ/6E67gVGvN06-nlaOnRxTWg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="551, 379, 249, 24" DesignTimeScaleFactor="1" ElementType="Cell" FullSelectorArgument="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='G10' cls='XLSpreadsheetCell' name='G10' tableCol='6' tableRow='9' /&gt;" FuzzySelectorArgument="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='G10' cls='XLSpreadsheetCell' name='G10' role='item' /&gt;" Guid="06523686-29eb-4e11-b2e9-b131b53a55ec" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction* - Excel' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="98dc4296c17cee88e8f8ce34d53e7593.png" xmlns="">08glZgsS2A0K4VnzAn1WB9Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="70PMWw6430uX-PO50Wi9Dw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="0, 0, 0, 0" Selector="&lt;wnd app='msiexec.exe' cls='MsiDialogCloseClass' title='Oracle ADF Desktop Integration Add-In for Excel' /&gt;" Url="[Nothing]" />
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

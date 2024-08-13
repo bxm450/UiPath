@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Click on Asset Number field",
+  "Type": "Element",
+  "Id": "6E67gVGvN06-nlaOnRxTWg",
+  "Reference": "eVYNqArr5Uq6LkYRDOhOeQ/6E67gVGvN06-nlaOnRxTWg",
+  "ParentRef": "eVYNqArr5Uq6LkYRDOhOeQ/2DW6-03a9EOfd0rSbF19rA",
+  "Created": "2024-08-13T13:04:00.4120816Z",
+  "Updated": "2024-08-13T13:04:00.4120816Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

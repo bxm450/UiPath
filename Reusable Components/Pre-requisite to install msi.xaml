@@ -1,0 +1,577 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Pre_requisite_to_install_msi" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="inputBrowserElement" Type="InArgument(ui:UiElement)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1233,2040</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Pre_requisite_to_install_msi_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>ReporterForUiPath.Enums</x:String>
+      <x:String>ReporterForUiPath.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence sap:VirtualizedContainerService.HintSize="1112,1975" sap2010:WorkflowViewState.IdRef="Sequence_9">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="Download Desktop Integration Installer" Name="Tools_List" />
+      <Variable x:TypeArguments="x:String" Name="latestmsiFile" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Welcome" sap:VirtualizedContainerService.HintSize="1050,443" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="de879d9c-2be2-431c-96b4-07601ac3ef5d" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,194" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Pre_requisite_to_install_msi" sap:VirtualizedContainerService.HintSize="450,104" sap2010:WorkflowViewState.IdRef="Sequence_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NCheckState DisplayName="Check App State 'PATH'" sap:VirtualizedContainerService.HintSize="388,84" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="de879d9c-2be2-431c-96b4-07601ac3ef5d" Timeout="10" Version="V3">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,497" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Navigator'" sap:VirtualizedContainerService.HintSize="388,189" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de879d9c-2be2-431c-96b4-07601ac3ef5d" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://ejhp-dev39.fa.us6.oraclecloud.com/fscmUI/faces/AtkHomePageWelcome?_adf.ctrl-state=caxehly66_1&amp;_adf.no-new-window-redirect=true&amp;_afrLoop=8681330761778721&amp;_afrWindowMode=0&amp;_afrWindowId=z6og06kzf&amp;_afrFS=16&amp;_afrMT=screen&amp;_afrMFW=1536&amp;_afrMFH=730&amp;_afrMFDW=1536&amp;_afrMFDH=864&amp;_afrMFC=8&amp;_afrMFCI=0&amp;_afrMFM=0&amp;_afrMFR=120&amp;_afrMFG=0&amp;_afrMFS=0&amp;_afrMFO=0" CVScreenId="fd63971f-4fcc-4219-af20-faf607faf0fe" CvElementArea="20, 173, 35, 30" CvType="Icon" DesignTimeRectangle="20, 140, 24, 27" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TD' colName='Navigator' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' colName='Navigator' class='' aaname='' check:text='Navigator' /&gt;" Guid="1e17cd7c-4b0e-4203-b45a-ea920104ef68" InformativeScreenshot="5bc0341861f91291017a9e0bbeb137f5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='*' title='*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="2" DisplayName="Click 'Show More'" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de879d9c-2be2-431c-96b4-07601ac3ef5d" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://ejhp-dev39.fa.us6.oraclecloud.com/fscmUI/faces/AtkHomePageWelcome?_adf.ctrl-state=17356jn5d6_1&amp;_adf.no-new-window-redirect=true&amp;_afrLoop=16923714979323726&amp;_afrWindowMode=2&amp;_afrWindowId=null&amp;_afrFS=16&amp;_afrMT=screen&amp;_afrMFW=1536&amp;_afrMFH=730&amp;_afrMFDW=1536&amp;_afrMFDH=864&amp;_afrMFC=8&amp;_afrMFCI=0&amp;_afrMFM=0&amp;_afrMFR=120&amp;_afrMFG=0&amp;_afrMFS=0&amp;_afrMFO=0" CVScreenId="984b11e1-e534-4934-8dac-97ad6bdbb7e1" CvTextArea="853, 135, 89, 16" CvTextArgument="Show More" CvType="Text" DesignTimeRectangle="669, 109, 101, 16" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl tableCol='2' tableRow='2' tag='TABLE' /&gt;&lt;webctrl aaname='Show More' tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Show More' type='' tag='A' class='x2kp xmv' check:text='Show More' /&gt;" Guid="c2f38d6c-54f2-4981-ab9e-3136bb8df2ba" InformativeScreenshot="2ca12b50fff14f7388057984273f4467.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='*' title='*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NClick>
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;target didnt appear&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                  </Sequence>
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable BrowserURL="https://ejhp-dev39.fa.us6.oraclecloud.com/fscmUI/faces/AtkHomePageWelcome?_adf.ctrl-state=1bb8xac1pl_1&amp;_adf.no-new-window-redirect=true&amp;_afrLoop=8733637613194418&amp;_afrWindowMode=2&amp;_afrWindowId=null&amp;_afrFS=16&amp;_afrMT=screen&amp;_afrMFW=1920&amp;_afrMFH=945&amp;_afrMFDW=1920&amp;_afrMFDH=1080&amp;_afrMFC=8&amp;_afrMFCI=0&amp;_afrMFM=0&amp;_afrMFR=96&amp;_afrMFG=0&amp;_afrMFS=0&amp;_afrMFO=0" CVScreenId="3e07514e-34f0-493f-89b6-3476a53f60c5" CvTextArea="48, 146, 131, 15" CvTextArgument="SHERWIN-WILLIAMS." CvType="Text" DesignTimeRectangle="20, 128, 162, 50" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table' tag='TABLE' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td' tableCol='1' tableRow='1' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='' aaname='' tag='TD' check:text='Navigator' /&gt;" Guid="903a07fc-8c6f-4db7-9d07-82a2c1b457c0" InformativeScreenshot="a5a847e38be46eccdff2d34105a6a110.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='*' title='*' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                </uix:NCheckState.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NCheckState>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,84" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="1014.4,659.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NCheckState DisplayName="Check App State 'A pt1:_UIScil1u'" sap:VirtualizedContainerService.HintSize="952,570.4" sap2010:WorkflowViewState.IdRef="NCheckState_3" InUiElement="[inputBrowserElement]" ScopeIdentifier="de879d9c-2be2-431c-96b4-07601ac3ef5d" Timeout="10" Version="V3">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,308.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Navigator'" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de879d9c-2be2-431c-96b4-07601ac3ef5d" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://ejhp-dev39.fa.us6.oraclecloud.com/fscmUI/faces/AtkHomePageWelcome?_adf.ctrl-state=17356jn5d6_1&amp;_adf.no-new-window-redirect=true&amp;_afrLoop=16923714979323726&amp;_afrWindowMode=2&amp;_afrWindowId=null&amp;_afrFS=16&amp;_afrMT=screen&amp;_afrMFW=1536&amp;_afrMFH=730&amp;_afrMFDW=1536&amp;_afrMFDH=864&amp;_afrMFC=8&amp;_afrMFCI=0&amp;_afrMFM=0&amp;_afrMFR=120&amp;_afrMFG=0&amp;_afrMFS=0&amp;_afrMFO=0" CVScreenId="67b6c068-5ab2-40bc-8527-c901a4aa0fa5" CvElementArea="21, 173, 34, 30" CvType="Icon" DesignTimeRectangle="24, 173, 30, 30" DesignTimeScaleFactor="1.25" ElementType="Icon" FullSelectorArgument="&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='svg' class='svg-bkgd06 xi6' aaname='' check:text='Navigator' /&gt;" Guid="90d2d352-4807-49ef-8776-798ba324059f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACmSURBVFhH7da9CYNAHEBxR3OUtE7jCJIJHMEiYOcAVmJt2tT/cK28QATPd4UHv+Yh96EIV1VNH0XAaMBowGjAaMBowGjAaMBooNiNayzvTxZpbloTNzLMW+QaaW5a8+dG6DRnOPRGFBgNGA0YDRTr9hWP55RFmpvWxI0U9fvmGoc2UsynUWA0YDRgNFC8rwF76WE6zRnua8DfMBowGjAaMBowXq6PL+Fk312F1abYAAAAAElFTkSuQmCC" InformativeScreenshot="fa6b393e29e6c1281512bfb80a71645d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='*' title='*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NClick>
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.IfNotExists>
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,259.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,168.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;Navigator doesnt appear&quot;]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                        </Sequence>
+                      </uix:NCheckState.IfNotExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable BrowserURL="https://ejhp-dev39.fa.us6.oraclecloud.com/fscmUI/faces/AtkHomePageWelcome?_adf.ctrl-state=kcbqpxa8n_1&amp;_adf.no-new-window-redirect=true&amp;_afrLoop=8671104806974445&amp;_afrWindowMode=2&amp;_afrWindowId=null&amp;_afrFS=16&amp;_afrMT=screen&amp;_afrMFW=1536&amp;_afrMFH=730&amp;_afrMFDW=1536&amp;_afrMFDH=864&amp;_afrMFC=8&amp;_afrMFCI=0&amp;_afrMFM=0&amp;_afrMFR=120&amp;_afrMFG=0&amp;_afrMFS=0&amp;_afrMFO=0" CVScreenId="6eda35f8-5903-4912-94bb-4a631f1dc27e" CvTextArea="58, 180, 165, 18" CvTextArgument="SHERWIN-WILLIAMS." CvType="Text" DesignTimeRectangle="60, 171, 163, 34" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl aaname='Oracle Logo Home' tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Oracle Logo Home' type='' tag='A' class='xn0 xko p_AFTextOnly' /&gt;" Guid="90711d64-41f1-454b-b1b2-2534ab4e6400" ImageBase64="" InformativeScreenshot="4c74ed247bffb72886ec9a096478c8d4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='*' title='*' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive" />
+                      </uix:NCheckState.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NCheckState>
+                  </Sequence>
+                </ui:CommentOut.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CommentOut>
+              <uix:NMouseScroll KeyModifiers="{x:Null}" DelayAfter="2" Direction="Down" DisplayName="Mouse Scroll 'Download Desktop'" sap:VirtualizedContainerService.HintSize="388,289" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="de879d9c-2be2-431c-96b4-07601ac3ef5d" Version="V3">
+                <uix:NMouseScroll.SearchedElement>
+                  <uix:SearchedElement>
+                    <uix:SearchedElement.Target>
+                      <uix:TargetAnchorable BrowserURL="https://ejhp-dev39.fa.us6.oraclecloud.com/fscmUI/faces/AtkHomePageWelcome?_adf.ctrl-state=6n5bt6u8u_1&amp;_adf.no-new-window-redirect=true&amp;_afrLoop=8688358612961947&amp;_afrWindowMode=2&amp;_afrWindowId=null&amp;_afrFS=16&amp;_afrMT=screen&amp;_afrMFW=1536&amp;_afrMFH=730&amp;_afrMFDW=1536&amp;_afrMFDH=864&amp;_afrMFC=8&amp;_afrMFCI=0&amp;_afrMFM=0&amp;_afrMFR=120&amp;_afrMFG=0&amp;_afrMFS=0&amp;_afrMFO=0" DesignTimeRectangle="553, 542, 200, 51" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl tableCol='2' tableRow='2' tag='TABLE' /&gt;&lt;webctrl aaname='{0}' class='xmu' tableRow='1' tag='SPAN' /&gt;&quot;, Tools_List)]" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='{0}' class='xmu' type='' tag='SPAN' check:text='{0}' /&gt;&quot;, Tools_List)]" Guid="7a5f7400-141d-4d72-865b-673381893588" InformativeScreenshot="a0565a5d983d69de87375ab0be0950a3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='*' title='*' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+                    </uix:SearchedElement.Target>
+                    <uix:SearchedElement.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:SearchedElement.Timeout>
+                  </uix:SearchedElement>
+                </uix:NMouseScroll.SearchedElement>
+                <uix:NMouseScroll.Target>
+                  <uix:TargetAnchorable BrowserURL="https://ejhp-dev39.fa.us6.oraclecloud.com/fscmUI/faces/AtkHomePageWelcome?_adf.ctrl-state=koomezs9j_1&amp;_adf.no-new-window-redirect=true&amp;_afrLoop=8689632306279111&amp;_afrWindowMode=2&amp;_afrWindowId=null&amp;_afrFS=16&amp;_afrMT=screen&amp;_afrMFW=1536&amp;_afrMFH=730&amp;_afrMFDW=1536&amp;_afrMFDH=864&amp;_afrMFC=8&amp;_afrMFCI=0&amp;_afrMFM=0&amp;_afrMFR=120&amp;_afrMFG=0&amp;_afrMFS=0&amp;_afrMFO=0" DesignTimeRectangle="553, 542, 200, 51" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl tableCol='2' tableRow='2' tag='TABLE' /&gt;&lt;webctrl aaname='Download Desktop Integration Installer' class='xmu' tableRow='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Download Desktop Integration Installer' class='xmu' type='' tag='SPAN' check:innerText='Download Desktop Integration Installer' /&gt;" Guid="f8bc1b8d-29df-49ca-bcd5-82b7a1a80905" InformativeScreenshot="2be0cbbcbe68b603d5a4cd4f7007e969.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='*' title='*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                </uix:NMouseScroll.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NMouseScroll>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,84" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Download Desktop'" sap:VirtualizedContainerService.HintSize="1110.4,225.6" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de879d9c-2be2-431c-96b4-07601ac3ef5d" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://ejhp-dev39.fa.us6.oraclecloud.com/fscmUI/faces/AtkHomePageWelcome?_adf.ctrl-state=buwby652i_1&amp;_adf.no-new-window-redirect=true&amp;_afrLoop=18083547400164312&amp;_afrFS=16&amp;_afrMT=screen&amp;_afrMFW=1536&amp;_afrMFH=730&amp;_afrMFDW=1536&amp;_afrMFDH=864&amp;_afrMFC=8&amp;_afrMFCI=0&amp;_afrMFM=0&amp;_afrMFR=120&amp;_afrMFG=0&amp;_afrMFS=0&amp;_afrMFO=0" DesignTimeRectangle="690, 815, 251, 65" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl tableCol='2' tableRow='2' tag='TABLE' /&gt;&lt;webctrl aaname='{0}' class='xmu' tableRow='1' tag='SPAN' /&gt;&quot;, Tools_List)]" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='{0}' class='xmu' type='' tag='SPAN' check:text='{0}' /&gt;&quot;, Tools_List)]" Guid="3d465477-e0b6-4d7f-9271-d12a2a3682e8" ImageBase64="" InformativeScreenshot="c22601bbbb4eade9583b3e6aeeba7912.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='*' title='*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Visible" />
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NClick>
+                  </Sequence>
+                </ui:CommentOut.Body>
+              </ui:CommentOut>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Download Desktop'" sap:VirtualizedContainerService.HintSize="388,225" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de879d9c-2be2-431c-96b4-07601ac3ef5d" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://ejhp-dev39.fa.us6.oraclecloud.com/fscmUI/faces/AtkHomePageWelcome?_adf.ctrl-state=1coyvora0d_1&amp;_adf.no-new-window-redirect=true&amp;_afrLoop=8700234999146670&amp;_afrWindowMode=2&amp;_afrWindowId=null&amp;_afrFS=16&amp;_afrMT=screen&amp;_afrMFW=1536&amp;_afrMFH=730&amp;_afrMFDW=1536&amp;_afrMFDH=864&amp;_afrMFC=8&amp;_afrMFCI=0&amp;_afrMFM=0&amp;_afrMFR=120&amp;_afrMFG=0&amp;_afrMFS=0&amp;_afrMFO=0" DesignTimeRectangle="553, 542, 200, 51" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl tableCol='2' tableRow='2' tag='TABLE' /&gt;&lt;webctrl aaname='{0}' class='xmu' tableRow='1' tag='SPAN' /&gt;&quot;, Tools_List)]" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Download Desktop Integration Installer' class='xmu' type='' tag='SPAN' check:innerText='Download Desktop Integration Installer' /&gt;" Guid="b80d2204-1dbc-42e1-bdb3-11c4bcd81154" ImageBase64="" InformativeScreenshot="2be0cbbcbe68b603d5a4cd4f7007e969.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='*' title='*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <ui:InvokeCode ContinueOnError="{x:Null}" Code="string downloadsFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + &quot;\\Downloads&quot;;&#xA;string[] txtFiles = Directory.GetFiles(downloadsFolderPath, &quot;*.msi&quot;);&#xA;&#xA;if (txtFiles.Length &gt; 0)&#xA;{&#xA;    var latestmsiFile = txtFiles&#xA;        .Select(file =&gt; new FileInfo(file))&#xA;        .OrderByDescending(fileInfo =&gt; fileInfo.LastWriteTime)&#xA;        .First();&#xA;&#xA;     latestmsiFilePath = latestmsiFile.FullName;&#xA;Console.WriteLine(latestmsiFilePath);&#xA;    // Use 'latestmsiFilePath' in UiPath for further processing.&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="388,197" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+                <ui:InvokeCode.Arguments>
+                  <OutArgument x:TypeArguments="x:String" x:Key="latestmsiFilePath">[latestmsiFile]</OutArgument>
+                </ui:InvokeCode.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeCode>
+              <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[latestmsiFile]" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="StartProcess_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:StartProcess>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="81700db4d9f645eca013681337eba91a.jpg" Selector="&lt;html app='chrome.exe' htmlwindowname='*' title='*' /&gt;" Title="Welcome" Url="https://ejhp-dev39.login.us6.oraclecloud.com/" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser" sap:VirtualizedContainerService.HintSize="1050,1444" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="c2142085-2e3e-4089-ad58-27de902ea636" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,1090" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState DisplayName="Check App State 'The installer'" sap:VirtualizedContainerService.HintSize="954,1000" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="5" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,758" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="388,225" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c2142085-2e3e-4089-ad58-27de902ea636" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable CVScreenId="71339f50-c81d-456c-8d87-acba907f2bc4" CvElementArea="382, 466, 110, 30" CvTextArea="417, 473, 38, 13" CvTextArgument="Next &gt;" CvType="Button" DesignTimeRectangle="383, 467, 110, 30" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Next &amp;gt;' cls='Button' title='&amp;amp;Next &amp;gt;' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Next &amp;gt;' cls='Button' title='&amp;amp;Next &amp;gt;' check:text='unchecked' /&gt;" Guid="7b10735a-18e6-457c-8f78-12f9ddf557e3" InformativeScreenshot="faf4f5d5f029c4d2ef9b0bd2af5aa5ec.png" ScopeSelectorArgument="&lt;wnd app='msiexec.exe' cls='MsiDialogCloseClass' title='Oracle ADF Desktop Integration Add-In for Excel' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="388,225" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c2142085-2e3e-4089-ad58-27de902ea636" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable CVScreenId="33d8d367-9f7f-46e0-b6e5-96ae369f2473" CvElementArea="382, 466, 110, 30" CvTextArea="418, 472, 36, 15" CvTextArgument="Install" CvType="Button" DesignTimeRectangle="383, 467, 110, 30" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Install' cls='Button' title='&amp;amp;Install' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Install' cls='Button' title='&amp;amp;Install' check:text='unchecked' /&gt;" Guid="5a0d8139-a0c7-4c66-87ce-4407292dff00" InformativeScreenshot="c6126fc9828461964d7950cd9ef466ca.png" ScopeSelectorArgument="&lt;wnd app='msiexec.exe' cls='MsiDialogCloseClass' title='Oracle ADF Desktop Integration Add-In for Excel' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c2142085-2e3e-4089-ad58-27de902ea636" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable CVScreenId="95eecac3-44a5-4b11-a340-01473cc05991" CvElementArea="502, 465, 111, 31" CvTextArea="538, 472, 36, 15" CvTextArgument="Close" CvType="Button" DesignTimeRectangle="503, 467, 110, 30" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Close' cls='Button' title='&amp;amp;Close' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Close' cls='Button' title='&amp;amp;Close' check:text='unchecked' /&gt;" Guid="8ecfc334-4a2c-4f0b-98f2-08f9cc64d4a0" InformativeScreenshot="5ce9b4d88b0ad58ef524cdadb195dba6.png" ScopeSelectorArgument="&lt;wnd app='msiexec.exe' cls='MsiDialogCloseClass' title='Oracle ADF Desktop Integration Add-In for Excel' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,708" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="popUpExist" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;Cancel'" sap:VirtualizedContainerService.HintSize="388,225" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c2142085-2e3e-4089-ad58-27de902ea636" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable CVScreenId="d0759aa0-6f25-4bf6-89ac-d5847b124692" CvElementArea="502, 466, 110, 30" CvTextArea="534, 472, 45, 15" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="502, 466, 110, 30" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Cancel' cls='Button' title='&amp;amp;Cancel' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Cancel' cls='Button' title='&amp;amp;Cancel' check:text='&amp;amp;Cancel' /&gt;" Guid="d1d131ea-e642-4c31-bef4-45e298bc6bb9" InformativeScreenshot="24767a43c36ddee724cdfc21702b6616.png" ScopeSelectorArgument="&lt;wnd app='msiexec.exe' cls='MsiDialogCloseClass' title='Oracle ADF Desktop Integration Add-In for Excel' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="d0759aa0-6f25-4bf6-89ac-d5847b124692" CvTextArea="15, 136, 535, 17" CvTextArgument="Version 5.2.1.27254 of Oracle ADF Desktop Integration Add-In for Excel is already installed." CvType="Text" DesignTimeRectangle="15, 136, 535, 17" ElementType="Text" Guid="e6546883-30c1-42b4-8c7a-09261f7d3032" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="388,225" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c2142085-2e3e-4089-ad58-27de902ea636" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable CVScreenId="ec8e5fd5-9f2b-4558-92ab-97bf74cb5cda" CvElementArea="502, 465, 111, 31" CvTextArea="538, 472, 36, 15" CvTextArgument="Close" CvType="Button" DesignTimeRectangle="503, 467, 110, 30" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Close' cls='Button' title='&amp;amp;Close' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Close' cls='Button' title='&amp;amp;Close' check:text='unchecked' /&gt;" Guid="c1fec66d-673e-43a8-b718-d138b813e44b" InformativeScreenshot="ed2143b66ec79bb60574817c7ca9cd51.png" ScopeSelectorArgument="&lt;wnd app='msiexec.exe' cls='MsiDialogCloseClass' title='Oracle ADF Desktop Integration Add-In for Excel' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="ec8e5fd5-9f2b-4558-92ab-97bf74cb5cda" CvTextArea="17, 48, 216, 23" CvTextArgument="Installation Interrupted" CvType="Text" DesignTimeRectangle="18, 47, 525, 55" ElementType="Text" FullSelectorArgument="&lt;wnd cls='Static' title='Installation Interrupted' /&gt;&lt;ctrl name='Installation Interrupted' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='Static' title='Installation Interrupted' /&gt;&lt;ctrl name='Installation Interrupted' role='text' automationid='' check:text='Installation Interrupted' /&gt;" Guid="ccc6ffe7-0ecd-4c52-8104-79626df32e0e" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;ADF msi set up is already done&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable CVScreenId="f278493a-d312-49b6-828b-504567ce713e" CvTextArea="15, 136, 559, 17" CvTextArgument="The installer will guide you through the steps required to install Oracle ADF Desktop Integration" CvType="Text" DesignTimeRectangle="15, 136, 559, 17" DesignTimeScaleFactor="1.25" ElementType="Text" Guid="b6dfaa36-eb0c-4c4d-b70f-8a68339b1ed9" InformativeScreenshot="b77fc382f961ee3db5d03486ca69a4f7.png" ScopeSelectorArgument="&lt;wnd app='msiexec.exe' cls='MsiDialogCloseClass' title='Oracle ADF Desktop Integration Add-In for Excel' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="f278493a-d312-49b6-828b-504567ce713e" CvTextArea="15, 48, 321, 20" CvTextArgument="ADF Desktop Integration Installer" CvType="Text" DesignTimeRectangle="15, 48, 321, 23" ElementType="Text" FullSelectorArgument="&lt;wnd cls='Static' title='ADF Desktop Integration Installer' /&gt;&lt;ctrl name='ADF Desktop Integration Installer' role='text' /&gt;" FuzzyMatches="10000" FuzzySelectorArgument="&lt;wnd cls='Static' title='ADF Desktop Integration Installer' /&gt;&lt;ctrl name='ADF Desktop Integration Installer' role='text' automationid='' check:text='ADF Desktop Integration Installer' /&gt;" Guid="a7b32768-0a92-4503-874d-b3e9592fd937" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" FilePath="[latestmsiFile]" Selector="&lt;wnd app='msiexec*.exe' cls='MsiDialogCloseClass' title='Oracle ADF Desktop Integration Add-In for Excel' /&gt;" Title="Oracle ADF Desktop Integration Add-In for Excel" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

@@ -1,0 +1,12 @@
+﻿{
+  "Name": "CreateMassFinancialTransaction.xlsx - Excel",
+  "Type": "App",
+  "Id": "6oyhhpPoE0-Wc98yGzzPSA",
+  "Reference": "eVYNqArr5Uq6LkYRDOhOeQ/6oyhhpPoE0-Wc98yGzzPSA",
+  "Created": "2024-08-13T13:04:00.1210493Z",
+  "Updated": "2024-08-13T13:04:00.1210493Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

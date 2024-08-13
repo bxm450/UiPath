@@ -1,0 +1,13 @@
+﻿{
+  "Name": "CreateMassFinancialTransaction.xlsx - Excel",
+  "Type": "Screen",
+  "Id": "2DW6-03a9EOfd0rSbF19rA",
+  "Reference": "eVYNqArr5Uq6LkYRDOhOeQ/2DW6-03a9EOfd0rSbF19rA",
+  "ParentRef": "eVYNqArr5Uq6LkYRDOhOeQ/vOfinE3Y3kWl5GeJhCoptw",
+  "Created": "2024-08-13T13:04:00.1393491Z",
+  "Updated": "2024-08-13T13:04:00.1393491Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
