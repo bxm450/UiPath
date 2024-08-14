@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="WorkflowPOC" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1233,3125" sap2010:WorkflowViewState.IdRef="WorkflowPOC_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="WorkflowPOC" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1233,3127" sap2010:WorkflowViewState.IdRef="WorkflowPOC_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -105,27 +105,23 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="WorkflowPOC" sap:VirtualizedContainerService.HintSize="512,3060" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="WorkflowPOC" sap:VirtualizedContainerService.HintSize="512,3062" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="processID" />
-      <Variable x:TypeArguments="x:String" Name="assetNumber">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">73655</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="73655" Name="assetNumber" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="CreateMassFinancialTransaction.xlsx - Excel" sap:VirtualizedContainerService.HintSize="450,2972" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="dfc42471-d230-4c49-9e46-e4f8b52cd8b9" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="CreateMassFinancialTransaction.xlsx - Excel" sap:VirtualizedContainerService.HintSize="450,2974" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="dfc42471-d230-4c49-9e46-e4f8b52cd8b9" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,2658" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,2660" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -133,7 +129,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="" ClickType="Double" DelayAfter="3" DisplayName="Click on Asset Number field" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dfc42471-d230-4c49-9e46-e4f8b52cd8b9" Version="V3">
               <uix:NClick.Target>
-                <uix:TargetAnchorable ContentHash="_80wv0GchE2rLqhmKUnqmA" DesignTimeRectangle="551, 379, 249, 24" DesignTimeScaleFactor="1" ElementType="Cell" FullSelectorArgument="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='G10' cls='XLSpreadsheetCell' name='G10' tableCol='6' tableRow='9' /&gt;" FuzzySelectorArgument="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='G10' cls='XLSpreadsheetCell' name='G10' role='item' /&gt;" Guid="06523686-29eb-4e11-b2e9-b131b53a55ec" InformativeScreenshot="98dc4296c17cee88e8f8ce34d53e7593.png" Reference="eVYNqArr5Uq6LkYRDOhOeQ/6E67gVGvN06-nlaOnRxTWg" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction* - Excel' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                <uix:TargetAnchorable ContentHash="Pnb-tmKrH02omw0BJ9V4Wg" DesignTimeRectangle="551, 379, 249, 24" DesignTimeScaleFactor="1" ElementType="Cell" FullSelectorArgument="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='G10' cls='XLSpreadsheetCell' name='G10' tableCol='6' tableRow='9' /&gt;" FuzzySelectorArgument="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='G10' cls='XLSpreadsheetCell' name='G10' role='item' /&gt;" Guid="06523686-29eb-4e11-b2e9-b131b53a55ec" InformativeScreenshot="98dc4296c17cee88e8f8ce34d53e7593.png" Reference="eVYNqArr5Uq6LkYRDOhOeQ/6E67gVGvN06-nlaOnRxTWg" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='CreateMassFinancialTransaction* - Excel' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
               </uix:NClick.Target>
               <uix:NClick.VerifyOptions>
                 <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
@@ -157,7 +153,7 @@
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable CVScreenId="cbaa09b3-7a24-44ba-8872-5152797e5d0f" CvElementArea="134, 105, 219, 30" CvType="InputBox" DesignTimeRectangle="134, 105, 219, 30" DesignTimeScaleFactor="1" ElementType="InputBox" Guid="05927cda-e100-4dec-91ac-9cc6c93cc491" ImageBase64="" InformativeScreenshot="aae39755666cbc415e6a8e276102de29.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='excel.exe' ctrlname='WebView2Form' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CVScreenId="cbaa09b3-7a24-44ba-8872-5152797e5d0f" CvTextArea="46, 113, 85, 12" CvTextArgument="Asset Number" CvType="Text" DesignTimeRectangle="46, 113, 85, 12" ElementType="Text" Guid="8a9659ec-5ffe-4438-874e-0e18e1103169" SearchSteps="CV" TargetType="ComputerVisionBased" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -168,7 +164,7 @@
               <uix:NClick.Target>
                 <uix:TargetAnchorable CVScreenId="aee26efa-900b-4e33-a7f7-dd11259785ca" CvTextArea="27, 270, 36, 13" CvTextArgument="73655" CvType="Text" DesignTimeRectangle="24, 263, 111, 31" DesignTimeScaleFactor="1" ElementType="Cell" FullSelectorArgument="[string.Format(&quot;&lt;wnd ctrlname='m_webView2' /&gt;&lt;wnd aaname='Search and Select: Assets - Web content' cls='*' title='Search and Select: Assets' /&gt;&lt;ctrl name='Search and Select: Assets' role='document' /&gt;&lt;ctrl name='This table contains column headers corresponding to the data bod*' role='grouping' /&gt;&lt;ctrl name='Search Results' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='{0}' role='cell' /&gt;&quot;, assetNumber)]" FuzzySelectorArgument="[string.Format(&quot;&lt;wnd ctrlname='m_webView2' /&gt;&lt;wnd aaname='Search and Select: Assets - Web content' cls='*' title='Search and Select: Assets' /&gt;&lt;ctrl name='Search and Select: Assets' role='document' /&gt;&lt;ctrl name='This table contains column headers corresponding to the data bod*' role='grouping' /&gt;&lt;ctrl name='Search Results' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='{0}' role='cell' automationid='' /&gt;&quot;, assetNumber)]" Guid="7f6f5a74-6b26-4dcf-9732-657a09154036" ImageBase64="" InformativeScreenshot="c909f7995aec6c5354f0e370774751a3.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' ctrlname='WebView2Form' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CVScreenId="aee26efa-900b-4e33-a7f7-dd11259785ca" CvTextArea="67, 239, 51, 13" CvTextArgument="Number" CvType="Text" DesignTimeRectangle="97, 239, 32, 16" FullSelectorArgument="&lt;wnd ctrlname='m_webView2' /&gt;&lt;wnd aaname='Search and Select: Assets - Web content' cls='Chrome_WidgetWin_1' title='Search and Select: Assets' /&gt;&lt;ctrl name='Search and Select: Assets' role='document' /&gt;&lt;ctrl name='This table contains column headers corresponding to the data bod*' role='grouping' /&gt;&lt;ctrl idx='2' name='This table contains column headers corresponding to the data bod*' role='table' /&gt;&lt;ctrl idx='2' role='row' /&gt;&lt;ctrl name='Asset Number' role='column header' /&gt;&lt;ctrl role='grouping' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='m_webView2' /&gt;&lt;wnd aaname='Search and Select: Assets - Web content' cls='Chrome_WidgetWin_1' title='Search and Select: Assets' /&gt;&lt;ctrl name='Search and Select: Assets' role='document' /&gt;&lt;ctrl name='This table contains column headers corresponding to the data bod*' role='grouping' /&gt;&lt;ctrl name='This table contains column headers corresponding to the data bod*' role='table' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='Asset Number' role='column header' /&gt;&lt;ctrl role='grouping' automationid='' /&gt;" Guid="38a81378-13f0-471e-987e-b4d8e76e6e36" SearchSteps="Selector, FuzzySelector, CV" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -195,7 +191,7 @@
               <uix:NClick.Target>
                 <uix:TargetAnchorable CVScreenId="2e14ddf2-9657-4625-93c8-f68d9db0612e" CvElementArea="291, 309, 36, 29" CvTextArea="298, 315, 21, 14" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="290, 309, 36, 28" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='m_webView2' /&gt;&lt;wnd aaname='Search and Select: Assets - Web content' cls='Chrome_WidgetWin_1' title='Search and Select: Assets' /&gt;&lt;ctrl name='Search and Select: Assets' role='document' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='m_webView2' /&gt;&lt;wnd aaname='Search and Select: Assets - Web content' cls='Chrome_WidgetWin_1' title='Search and Select: Assets' /&gt;&lt;ctrl name='Search and Select: Assets' role='document' /&gt;&lt;ctrl name='OK' role='push button' automationid='' check:text='OK' /&gt;" Guid="2eb6a307-2a39-48f0-9a2b-e7a5413abefd" InformativeScreenshot="f9d93642172672fc7b98bb8519a5b885.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' ctrlname='WebView2Form' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CVScreenId="2e14ddf2-9657-4625-93c8-f68d9db0612e" CvElementArea="291, 309, 36, 29" CvTextArea="298, 315, 21, 14" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="299, 315, 10, 15" ElementType="Text" FullSelectorArgument="&lt;wnd ctrlname='m_webView2' /&gt;&lt;wnd aaname='Search and Select: Assets - Web content' cls='Chrome_WidgetWin_1' title='Search and Select: Assets' /&gt;&lt;ctrl name='Search and Select: Assets' role='document' /&gt;&lt;ctrl name='OK' role='push button' /&gt;&lt;ctrl name='O' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='m_webView2' /&gt;&lt;wnd aaname='Search and Select: Assets - Web content' cls='Chrome_WidgetWin_1' title='Search and Select: Assets' /&gt;&lt;ctrl name='Search and Select: Assets' role='document' /&gt;&lt;ctrl name='OK' role='push button' /&gt;&lt;ctrl name='O' role='text' automationid='' check:text='O' /&gt;" Guid="b2a6f7b0-403c-4c82-9480-f82fd83b6628" SearchSteps="Selector, FuzzySelector, CV" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>

@@ -1,7 +1,7 @@
 {
-  "name": "TestAutomationProjectExcel",
+  "name": "ADFDIUiPathPOC",
   "projectId": "93f6690a-2332-401f-a95e-e3e86f304c03",
-  "description": "Test Automation Project",
+  "description": "ADFDIUiPathPOC",
   "main": "Main.xaml",
   "dependencies": {
     "ReporterForUiPath.Activities": "[3.0.1]",
